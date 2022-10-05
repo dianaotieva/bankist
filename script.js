@@ -366,12 +366,12 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 // console.log(movementsDescriptions);
 
-const account = accounts.find(acc => acc.owner==='Jessica Davis');
-console.log(account);
+// const account = accounts.find(acc => acc.owner==='Jessica Davis');
+// console.log(account);
 
-const accounT = [];
-for(const acc of accounts)accounT.push(acc.owner==='Jessica Davis') ;
-console.log(accounT);
+// const accounT = [];
+// for(const acc of accounts)accounT.push(acc.owner==='Jessica Davis') ;
+// console.log(accounT);
 
 
 
@@ -462,52 +462,52 @@ console.log(accounT);
 // console.log(avg1, avg2);
 
 //SOME: CONDITION
-console.log(movements.some(mov=> mov === -130));
+// console.log(movements.some(mov=> mov === -130));
 
-const anyDeposits = movements.some(mov => mov > 1500);
-console.log(anyDeposits);
+// const anyDeposits = movements.some(mov => mov > 1500);
+// console.log(anyDeposits);
 
-// EVERY
-console.log(movements.every(mov=> mov >0));
-console.log(account4.movements.every(mov=>mov>0));
+// // EVERY
+// console.log(movements.every(mov=> mov >0));
+// console.log(account4.movements.every(mov=>mov>0));
 
-//SEparate callback
-const deposit = mov => mov >0;
-console.log(movements.some(deposit));
-console.log(movements.every(deposit));
-console.log(movements.filter(deposit));
-
-
-//flat method
-const arr = [[1,2,3], [4,5,6], 7,8];
-console.log(arr.flat());
-
-const arrDeep = [[[1,2],3], [4,[5,6]], 7,8];
-console.log(arrDeep.flat(2));
+// //SEparate callback
+// const deposit = mov => mov >0;
+// console.log(movements.some(deposit));
+// console.log(movements.every(deposit));
+// console.log(movements.filter(deposit));
 
 
-const overalBalance = accounts
-.map(acc=>acc.movements)
-.flat()
-.reduce((acc,mov)=>acc + mov, 0);
+// //flat method
+// const arr = [[1,2,3], [4,5,6], 7,8];
+// console.log(arr.flat());
+
+// const arrDeep = [[[1,2],3], [4,[5,6]], 7,8];
+// console.log(arrDeep.flat(2));
 
 
-console.log(overalBalance);
+// const overalBalance = accounts
+// .map(acc=>acc.movements)
+// .flat()
+// .reduce((acc,mov)=>acc + mov, 0);
 
-//flatmap
 
-const overalBalance2 = accounts
-.flatMap(acc => acc.movements)
-.reduce((acc, mov) => acc + mov, 0);
-console.log(overalBalance2);
+// console.log(overalBalance);
 
-//Strings
-const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
-console.log(owners.sort());
-console.log(owners);
+// //flatmap
 
-//Numbers
-console.log(movements);
+// const overalBalance2 = accounts
+// .flatMap(acc => acc.movements)
+// .reduce((acc, mov) => acc + mov, 0);
+// console.log(overalBalance2);
+
+// //Strings
+// const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+// console.log(owners.sort());
+// console.log(owners);
+
+// //Numbers
+// console.log(movements);
 
 //return < 0, A, B (keep order)
 //return > 0, B , A ( switch order)
@@ -533,3 +533,17 @@ console.log(movements);
 
 // movements.sort((a,b) => b-a);
 // console.log(movements);
+
+const arr = [1,2,3,4,5,6,7]
+console.log(new Array(1,2,3,4,5,6,7));
+
+const x = new Array(7);
+console.log(x);
+
+// console.log(x.map(() =>5));
+
+// x.fill(1);
+// console.log(x);
+
+x.fill(1,3,5);
+console.log(x);
