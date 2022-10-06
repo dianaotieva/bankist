@@ -547,3 +547,59 @@ console.log(x);
 
 x.fill(1,3,5);
 console.log(x);
+///////////////////////////
+// Array Method Practice
+// Here we want all deposite sum so we need to create a new array and 
+// for that we use the 'map' method. now we need one big array cause 
+// we have here arrays in array, so we use for this 'flat' method.
+const bankDepositeSum = accounts.map(acc => acc.
+  movements).flat();
+
+  console.log(bankDepositeSum);
+
+// Here instead of a map and flat methods we use flatMap method, it would be easy to use;
+// Than we need use filter and reduce methods for the sum.
+// 1 exercise
+
+const bankDepositeSum2 = accounts
+.flatMap(acc => acc.movements)
+.filter(mov => mov > 0)
+.reduce((sum, cur) => sum + cur,0);
+
+  console.log(bankDepositeSum2);
+
+
+// In this exercise we want to count deposits, so first we need to 
+// put movements into one array with flatmap method
+// second we need filter for movements greater than 1000
+// and thord we need length method and it shows us that we get
+// five deposits, this is the  first method of counting num of deposits now we 
+// can do like this 
+// 2 exercise
+
+//1 const numDeposits1000 = accounts
+// .flatMap(acc => acc.movements)
+// .filter(mov => mov > 1000).length;
+
+// console.log(numDeposits1000);
+
+
+//2
+const numDeposits1000 = accounts
+.flatMap(acc => acc.movements)
+.reduce((count, cur) => (cur >=1000 ? ++count :
+  count), 0);
+  console.log(numDeposits1000);
+
+// 3 exercise
+const { deposites, withdrawals} = accounts
+.flatMap(acc => acc.movements)
+.reduce((sums, cur) =>{
+  // cur  > 0 ? sums.deposites += cur : sums.withdrawals
+  // += cur;
+  sums[cur > 0 ? 'deposites' : 'withdrawals'] +=
+  cur;
+  return sums;
+}, {deposites: 0, withdrawals: 0});
+
+console.log(deposites, withdrawals);
